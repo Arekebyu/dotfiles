@@ -39,8 +39,12 @@ require("lazy").setup({
     {'vim-test/vim-test'},
     {'lukas-reineke/indent-blankline.nvim'},
     --auto pairs brackets, should probably configure since it's useful
-    {'windwp/nvim-autopairs'};
-    {'folke/which-key.nvim'}
+    {'windwp/nvim-autopairs'},
+    {'folke/which-key.nvim'},
     -- web devicons
     --
+    {'nvim-tree/nvim-tree.lua'},
+    {'kyazdani42/nvim-web-devicons'},
+    {'yamatsum/nvim-nonicons'},
+    {'nvim-lualine/lualine.nvim'},
 })
