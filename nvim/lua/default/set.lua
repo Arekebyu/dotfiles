@@ -16,7 +16,7 @@ vim.opt.wrap = false;
 -- set undotree to be persistent and stops vim auto backup
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir =  os.getenv("HOME").."/.vim/undodir"
+-- vim.opt.undodir =  os.getenv("HOME").."/.vim/undodir"
 vim.opt.undofile = true
 
 -- highlight search is true by default
