@@ -16,11 +16,25 @@ require("lazy").setup({
     {'nvim-telescope/telescope.nvim', tag = '0.1.2',
     dependencies = { 'nvim-lua/plenary.nvim' }},
     --{'rose-pine/neovim', name = 'rose-pine' },
+    --{'vim-test/vim-test'},
     {'AlexvZyl/nordic.nvim', name = 'nordic'},
     {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
+    --eye candy
+    {'kyazdani42/nvim-web-devicons'},
+    {'yamatsum/nvim-nonicons'},
+    {'nvim-lualine/lualine.nvim'},
+    --github
+    {'tpope/vim-fugitive'},
+    --qol
     {'ThePrimeagen/harpoon'},
     {'mbbill/undotree'},
-    {'tpope/vim-fugitive'},
+    {'windwp/nvim-autopairs'},
+    {'windwp/nvim-ts-autotag'},
+    {'lukas-reineke/indent-blankline.nvim'},
+    {'folke/which-key.nvim'},
+    {'nvim-tree/nvim-tree.lua'},
+    {'norcalli/nvim-colorizer.lua'},
+    --lsp
     {'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
     dependencies = {
@@ -35,18 +49,5 @@ require("lazy").setup({
         {'L3MON4D3/LuaSnip'},     -- Required
         }
     },
-    --starting from here, these have not been configured, you should take time to configure these
-    {'norcalli/nvim-colorizer.lua'},
-    {'vim-test/vim-test'},
-    {'lukas-reineke/indent-blankline.nvim'},
-    --auto pairs brackets, should probably configure since it's useful
-    {'windwp/nvim-autopairs'},
-    {'folke/which-key.nvim'},
-    -- web devicons
-    --
-    {'nvim-tree/nvim-tree.lua'},
-    {'kyazdani42/nvim-web-devicons'},
-    {'yamatsum/nvim-nonicons'},
-    {'nvim-lualine/lualine.nvim'},
     {'simrat39/rust-tools.nvim'},
 })

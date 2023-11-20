@@ -12,7 +12,8 @@ require("nvim-tree").setup({
         },
     },
     filters = {
-        dotfiles = true,
+        dotfiles = false,
+        git_ignored = false,
     },
 })
 vim.keymap.set("n", "<leader>pe", vim.cmd.NvimTreeToggle)
