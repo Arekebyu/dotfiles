@@ -9,12 +9,12 @@ lsp.ensure_installed({
 lsp.nvim_workspace()
 
 local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-  ["<C-Space>"] = cmp.mapping.complete(),
+    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+    ["<C-Space>"] = cmp.mapping.complete(),
 })
 
 lsp.set_preferences({
@@ -29,7 +29,29 @@ lsp.set_preferences({
 
 -- (Optional) Configure lua language server for neovim
 -- require('lspconfig').lua_ls.setup({})
---require('lspconfig').rust_analyzer.setup({})
+require('lspconfig').rust_analyzer.setup({
+    flags = flags,
+    capabilities = capabilities,
+    on_attach = on_attach,
+    settings = {
+        ['rust_analyzer'] = {
+            cargo = {
+                allFeatures = true,
+            },
+            checkOnSave = {
+                allFeatures = true,
+                command = 'clippy',
+            },
+            procMacro = {
+                ignored = {
+                    ['async-trait'] = { 'async_trait' },
+                    ['napi-derive'] = { 'napi' },
+                    ['async-recursion'] = { 'async_recursion' },
+                },
+            },
+        }
+    }
+})
 --require('lspconfig').clangd.setup({})
 --require('lspconfig').eslint.setup({})
 
